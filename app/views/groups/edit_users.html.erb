@@ -1,0 +1,19 @@
+<a href="/groups/<%= @group.id %>">&larr; Back to Group</a>
+<h1>Edit Users for Group "<%= @group.name %>"</h1>
+<hr />
+<%= form_with(model: @group, local: true) do |form| %>
+  <p>
+    <%= form.label :users %><br>
+    <% for user in User.all %>
+      <label>
+        <%= check_box_tag "group[user_ids][]", user.id, @group.users.include?(user) %>
+        <%= user.name %>
+      </label>
+      <br />
+    <% end %>
+  </p>
+  <p>
+    <%= hidden_field_tag("group[user_ids][]") %>
+    <%= form.submit %>
+  </p>
+<% end %>

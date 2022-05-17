@@ -1,0 +1,9 @@
+<a href="/guides">&larr; All Guides</a>
+<h1><%= @guide.name %> | <a href="/guides/<%= @guide.id %>/edit">Edit</a></h1>
+<hr />
+<h2>Guide Users</h2>
+<ul>
+  <% @guide.guides_users.each do |guides_user| %>
+    <li>Assigned on <%= guides_user.created_at %> to <%= link_to guides_user.user.name, user_path(guides_user.user) %> through <%= link_to guides_user.group_automation.name, group_path(guides_user.group_automation.group) %></li>
+  <% end %>
+</ul>

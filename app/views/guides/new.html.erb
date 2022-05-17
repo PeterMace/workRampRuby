@@ -1,0 +1,12 @@
+<a href="/guides">&larr; All Guides</a>
+<h1>New Guide</h1>
+<hr />
+<%= form_with scope: :guide, url: guides_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

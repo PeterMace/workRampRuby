@@ -1,0 +1,16 @@
+<a href="/users/<%= @user.id %>">&larr; Back to User</a>
+<h1>Edit User</h1>
+<hr />
+<%= form_with(model: @user, local: true) do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

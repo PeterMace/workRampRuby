@@ -1,0 +1,15 @@
+<h1>Group Automations</h1>
+<hr />
+<ul>
+  <li><a href="/users">Users (<%= User.all.size %>)</a></li>
+  <li><a href="/guides">Guides (<%= Guide.all.size %>)</a></li>
+  <li><a href="/groups">Groups (<%= Group.all.size %>)</a></li>
+</ul>
+<hr />
+<h2>
+  <%= link_to 'Run All Group Automations (' + GroupAutomationForUser.all.size.to_s + ')', '/run_all_group_automations', method: :get, data: { confirm: 'Are you sure you want to run all Group Automations for Users?' } %>
+</h2>
+<hr />
+<h2>
+  <%= link_to 'Delete All Guides Users (' + GuidesUser.all.size.to_s + ')', '/delete_all_guides_users', method: :get, data: { confirm: 'Are you sure you want to delete all Users associated with Guides?' } %>
+</h2>

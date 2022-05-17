@@ -1,0 +1,15 @@
+<a href="/groups/<%= @group.id %>">&larr; Back to Group</a>
+<h1>Add Automation for Group "<%= @group.name %>"</h1>
+<hr />
+<%= form_with scope: :group_automation, url: group_path + '/create_automation', local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.collection_select :guide_id, Guide.all, :id, :name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

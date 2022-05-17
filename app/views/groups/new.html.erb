@@ -1,0 +1,12 @@
+<a href="/groups">&larr; All Groups</a>
+<h1>New Group</h1>
+<hr />
+<%= form_with scope: :group, url: groups_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

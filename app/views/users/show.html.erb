@@ -1,0 +1,16 @@
+<a href="/users">&larr; All Users</a>
+<h1><%= @user.name %> (<%= @user.email %>) | <a href="/users/<%= @user.id %>/edit">Edit</a></h1>
+<hr />
+<h2>User Guides</h2>
+<ul>
+  <% @user.guides_users.each do |guides_user| %>
+    <li>Assigned on <%= guides_user.created_at %> to <%= link_to guides_user.guide.name, guide_path(guides_user.guide) %>  through <%= link_to guides_user.group_automation.name, group_path(guides_user.group_automation.group) %></li>
+  <% end %>
+</ul>
+<hr />
+<h2>User Groups</h2>
+<ul>
+  <% @user.groups.each do |group| %>
+    <li><%= link_to group.name, group_path(group) %></li>
+  <% end %>
+</ul>

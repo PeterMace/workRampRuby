@@ -1,0 +1,8 @@
+<a href="/">&larr; Home</a>
+<h1>All Groups | <a href="/groups/new">New Group</a></h1>
+<hr />
+<ul>
+  <% @groups.each do |group| %>
+    <li><%= link_to group.name + ' (' + group.users.size.to_s + ')', group_path(group) %></li>
+  <% end %>
+</ul>
